@@ -83,7 +83,7 @@ input:checked+label {
     width: 150px;
 }
 .time-container::after {
-    background-image: url("dropdownicon.png");
+    background-image: url("dropdownIcon.png");
     background-size: 25px 25px;
     position: absolute;
     top: 5px;
