@@ -11,7 +11,6 @@ btn.addEventListener("click", ()=>{
     setTimeout(()=>{
         btn.disabled = false; 
         testBox.classList.remove("hidden");
-        testBox.innerHTML = document.getElementById("time1").value;
         localStorage.setItem("test1", testBox.innerHTML);
     },1000);
 });
