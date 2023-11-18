@@ -7,12 +7,12 @@ const btn = document.getElementById("btn");
 btn.addEventListener("click", ()=>{
     btn.disabled = true;
     testBox.classList.add("hidden");
-    //localStorage.clear();
+    localStorage.clear();
     setTimeout(()=>{
         btn.disabled = false; 
         testBox.classList.remove("hidden");
         testBox.innerHTML = document.getElementById("time1").value;
-        localStorage.setItem("test1", document.getElementById("time1").value);
+        localStorage.setItem("test1", testBox.innerHTML);
     },1000);
 });
 const dropdownInput = document.querySelector(".time-container");
