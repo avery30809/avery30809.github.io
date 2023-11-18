@@ -1,0 +1,120 @@
+* {
+    box-sizing: border-box;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: #0077FF;
+    transition: all 1s ease-in-out;
+    padding: 10px;
+    margin: 10px;
+}
+
+.box:hover {
+    background-color: red;
+    width: 200px;
+}
+button {
+    top: 20px;
+    width: 50px;
+    height: 25px;
+    border-radius: 10px;
+    font-weight: 600;
+    color: white !important;
+    text-decoration: none;
+    font-size: 15px !important;
+    padding: 0px !important;
+    margin-top: 0px !important;
+    margin-left: 5px !important;
+    background-color: rgba(220, 84, 84, 0.607);
+    color: white;
+    cursor: pointer;
+}
+button:disabled {
+    background-color: lightgray;
+    cursor:default;
+}
+input#ck1 {
+    display: none;
+}
+.hidden {
+    display: none;
+}
+label {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: #C3DEF3;
+    border-radius: 20px;
+    margin-right: 3px;
+    cursor: pointer;
+}
+input:checked+label {
+    background-color: rgb(100, 168, 190);
+}
+
+#myList {
+    width: 150px;
+    height: 25px;
+    border: none;
+    border-bottom: 2px solid lightgray;
+}
+
+#myList option {
+    background-color: green;
+}
+
+#time2 {
+    border: none;
+    border-bottom: 2px solid lightgray;
+    height: 30px;
+    width: 150px;
+    font-size: 15px;
+}
+#time2:hover {
+    cursor: pointer;
+}
+#time2:focus {
+    outline: none;
+}
+.time-container {
+    position: relative;
+    width: 150px;
+}
+.time-container::after {
+    background-image: url("dropdownicon.png");
+    background-size: 25px 25px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    pointer-events: none;
+    width: 25px;
+    height: 25px;
+    content: "";
+}
+
+.dropdown {
+    width: 150px;
+    position: absolute;
+    background-color: white;
+    z-index: 1;
+}
+.time-list {
+    list-style: none;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    display: none;
+}
+.time-list li {
+    border-inline: 2px solid lightgray;
+    border-bottom: 2px solid lightgray;
+    padding-block: 5px;
+    text-align: center;
+}
+.time-list li:hover {
+    cursor: pointer;
+    /*background-color: rgb(0, 162, 255);*/
+    background-color:rgb(90, 163, 223);
+}
