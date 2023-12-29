@@ -2,17 +2,35 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>test</title>
+        <style>
+            input {
+                width: 25%;
+                font-size: xx-large;
+            }
+            button {
+                width: 43px;
+                height: 43px;
+            }
+            #target {
+                width: 75%;
+                height: 500px;
+            }
+            @media (max-width: 450px) {
+                input {
+                    width: 75%;
+                }
+                
+            }
+        </style>
     </head>
     <body>
         <form id="myForm">
             <input type="text" name="link">
             <button type="submit">搜尋</button>
         </form>
-        <iframe id="target"></iframe>
-        <!--
-        <iframe width="1100" height="619" src="https://www.youtube.com/embed/YonjeTa5Qw8?list=PLSJjSNvHjy_f3ghiXBxvAD1FMWzAADs_h" title="【錢線百分百】20180406-1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        -->
+        <iframe id="target" allowfullscreen></iframe>
         <script>
             const myForm = document.getElementById("myForm");
             const target = document.getElementById("target");
@@ -29,13 +47,10 @@
                 }
                 if(link.split("&")[1]!=undefined && link.split("&")[1].indexOf("list") !== -1) 
                     result += "?" + link.split("&")[1];
-                target.style.width = "1400px";
-                target.style.height = "800px";
                 target.src = result;
                 target.title = "結果";
                 target.setAttribute("frameborder", "0");
                 target.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
-                target.setAttribute("allowfullscreen", true);
             }, false);
         </script>
     </body>
