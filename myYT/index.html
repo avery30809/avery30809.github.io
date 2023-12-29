@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>test</title>
+    </head>
+    <body>
+        <form id="myForm">
+            <input type="text" name="link">
+            <button type="submit">搜尋</button>
+        </form>
+        <iframe id="target"></iframe>
+        <!--
+        <iframe width="1100" height="619" src="https://www.youtube.com/embed/YonjeTa5Qw8?list=PLSJjSNvHjy_f3ghiXBxvAD1FMWzAADs_h" title="【錢線百分百】20180406-1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        -->
+        <script>
+            const myForm = document.getElementById("myForm");
+            const target = document.getElementById("target");
+            myForm.addEventListener("submit", (e)=>{
+                e.preventDefault();
+                let testForm = new FormData(myForm);
+                let link = testForm.get("link");
+                result = link.split("&")[0];
+                result = result.replace("watch?v=", "embed/");
+                if(link.split("&")[1].indexOf("list") !== -1) 
+                    result += "?" + link.split("&")[1];
+                console.log(result);
+                target.style.width = "1400px";
+                target.style.height = "800px";
+                target.src = result;
+                target.title = "結果";
+                target.setAttribute("frameborder", "0");
+                target.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+                target.setAttribute("allowfullscreen", true);
+            }, false);
+        </script>
+    </body>
+</html>
