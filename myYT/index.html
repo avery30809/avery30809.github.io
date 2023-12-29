@@ -21,10 +21,14 @@
                 let testForm = new FormData(myForm);
                 let link = testForm.get("link");
                 result = link.split("&")[0];
-                result = result.replace("watch?v=", "embed/");
-                if(link.split("&")[1].indexOf("list") !== -1) 
+                if(result.indexOf("youtu.be") !== -1) {
+                    result = result.replace("youtu.be", "www.youtube.com/embed");
+                }
+                else {
+                    result = result.replace("watch?v=", "embed/");
+                }
+                if(link.split("&")[1]!=undefined && link.split("&")[1].indexOf("list") !== -1) 
                     result += "?" + link.split("&")[1];
-                console.log(result);
                 target.style.width = "1400px";
                 target.style.height = "800px";
                 target.src = result;
