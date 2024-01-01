@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         // 獲取查詢的日期值
         let testForm = new FormData();
         testForm.append("action", "searchDate");
-        fetch("ntoucsroomlease.infinityfreeapp.com/Controller/Api/UserController.php", {
+        fetch("http://ntoucsroomlease.infinityfreeapp.com/Controller/Api/UserController.php", {
             method: 'POST',
             body: testForm
         })
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     
     let startTime, endTime, roomName;
     function getForm() {
-        fetch("ntoucsroomlease.infinityfreeapp.com/Controller/Api/ClassroomController.php?action=getApplicationForm")
+        fetch("http://ntoucsroomlease.infinityfreeapp.com/Controller/Api/ClassroomController.php?action=getApplicationForm")
         .then(response => response.json())
         .then(data => {
             if(data["error"] === undefined) {
@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         }
         testForm.append("userID", window.localStorage.getItem("ID"));
         testForm.append("action", "submitForm");
-        fetch("ntoucsroomlease.infinityfreeapp.com/Controller/Api/HistoryController.php", {
+        fetch("http://ntoucsroomlease.infinityfreeapp.com/Controller/Api/HistoryController.php", {
             method: 'POST',
             body: testForm
         })
@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     function Cancel() {
         const testForm = new FormData();
         testForm.append("action", "cancelForm");
-        fetch("ntoucsroomlease.infinityfreeapp.com/Controller/Api/ClassroomController.php", {
+        fetch("http://ntoucsroomlease.infinityfreeapp.com/Controller/Api/ClassroomController.php", {
             method: 'POST',
             body: testForm
         });

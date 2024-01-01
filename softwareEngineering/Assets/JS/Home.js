@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         email: "",
         phone: null
     };
-    fetch(`ntoucsroomlease.infinityfreeapp.com/Controller/Api/UserController.php?action=getUserProfile&ID=${window.localStorage.getItem("ID")}`)
+    fetch(`http://ntoucsroomlease.infinityfreeapp.com/Controller/Api/UserController.php?action=getUserProfile&ID=${window.localStorage.getItem("ID")}`)
     .then(response => response.json())
     .then(data => {
         //已登入
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         formdata.append("date", selectedDate);
         formdata.append("action", "searchDate");
 
-        fetch("ntoucsroomlease.infinityfreeapp.com/Controller/Api/UserController.php", {
+        fetch("http://ntoucsroomlease.infinityfreeapp.com/Controller/Api/UserController.php", {
             method: 'POST',
             body: formdata
         });
