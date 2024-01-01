@@ -1,0 +1,1027 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    /* background-color: #96e1ff; */
+}
+
+/* 側欄容器 */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    padding: 10px 14px;
+    background-color: #f89639;
+    border-right: 1px solid #e6e5e5;
+    text-shadow: 0px 15px 5px rgba(0, 0, 0, 0.1), 10px 20px 5px rgba(0, 0, 0, 0.04), -10px 20px 5px rgba(0, 0, 0, 0.04);
+    transition: all 0.5s ease;
+
+}
+
+nav.close {
+    width: 73px;
+}
+
+/* 左上半部欄位 */
+nav .logo-name {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: solid;
+
+}
+
+nav .logo-image {
+    display: flex;
+    justify-content: center;
+    min-width: 45px;
+}
+
+nav .logo-image img {
+    width: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+nav .logo-name .logo_name {
+    font-size: 22px;
+    font-weight: 600;
+    color: #000;
+    margin-left: 14px;
+    transition: all 0.5s ease;
+}
+
+nav.close .logo_name {
+    opacity: 0;
+    pointer-events: none;
+}
+
+nav .menu-items {
+    margin-top: 20px;
+    height: calc(100% - 90px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* border: solid; */
+}
+
+.menu-items button {
+    border: none;
+    cursor: pointer;
+    width: 221px;
+}
+
+.menu-items li {
+    list-style: none;
+    margin-top: 5px;
+}
+
+.menu-items li button:hover {
+    background-color: white;
+    border-radius: 20px;
+}
+
+.menu-items li button {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    text-decoration: none;
+    position: relative;
+    background-color: #f89639;
+    
+}
+
+.nav-links li button:hover:before {
+    content: "";
+    position: absolute;
+    left: -7px;
+    height: 50px;
+    width: 5px;
+    /* border-radius: 50%; */
+    background-color: rgb(0, 0, 0);
+}
+
+.nav-links li button:hover i,
+.nav-links li button:hover .link-name {
+    color: rgb(0, 0, 0);
+}
+
+.menu-items li button i {
+    font-size: 24px;
+    min-width: 45px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* color: #70707071; */
+    margin-left: 5px;
+}
+
+.menu-items li button .link-name {
+    padding-left: 20px;
+    font-size: 22px;
+    font-weight: 550;
+    color: #ffffff;
+    transition: all 0.2s ease;
+}
+
+
+nav.close li button .link-name {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.menu-items .logout-mode {
+    padding-top: 10px;
+    border-top: 1px solid rgb(77, 63, 3);
+}
+
+
+.menu-items .logout-mode li button:hover {
+    background-color: #ffaf65;
+}
+
+
+/* 右下方欄位 */
+.board {
+    position: relative;
+    left: 250px;
+    background-color: #ffffff;
+    height: 100vh;
+    width: calc(100% - 250px);
+    padding: 10px 14px;
+    transition: all 0.5s ease;
+}
+
+nav.close~.board {
+    left: 73px;
+    width: calc(100% - 73px);
+}
+
+/* 右上方欄位 */
+.board .top {
+    position: fixed;
+    height: 10%;
+    top: 0;
+    left: 250px;
+    display: flex;
+    width: calc(100% - 250px);
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 14px;
+    background-color: rgb(255, 255, 255);
+    transition: all 0.5s ease;
+    z-index: 10;
+
+}
+
+nav.close~.board .top {
+    left: 73px;
+    width: calc(100% - 73px);
+}
+
+.board .top .sidebar-toggle {
+    font-size: 26px;
+    color: #000;
+    cursor: pointer;
+}
+
+.top img {
+    width: 40px;
+    /*border-radius: 50%;*/
+}
+
+.leftArrow.show {
+    transform: rotate(180deg);
+}
+
+
+/* 借用請求-------------------------------------------------------------------- */
+
+.borrowRequest {
+    display: none;
+}
+
+.borrowRequest.show {
+    display: block;
+}
+
+
+
+.conditions {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.conditions button {
+    font-size: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-weight: 600;
+    background-color: white;
+    cursor: pointer;
+    border: 1px solid;
+}
+
+.conditions button:hover {
+    background-color: #e5e5e5;
+}
+
+.immediately {
+    height: 100%;
+    width: 50%;
+}
+
+.immediately.show {
+    background-color: rgb(143, 143, 143);
+}
+
+.immediately.show:hover {
+    background-color:  rgb(143, 143, 143);
+}
+
+.immediatelyForm {
+    display: none;
+    margin-top: 20px;
+    overflow-y: scroll;
+    max-height: 600px;
+}
+
+.immediatelyForm.show {
+    display: block;
+}
+
+.reserve {
+    height: 100%;
+    width: 50%;
+}
+
+.reserve.show {
+    background-color:  rgb(143, 143, 143);
+}
+
+.reserve.show:hover {
+    background-color:  rgb(143, 143, 143);
+}
+
+.reserveForm {
+    display: none;
+    margin-top: 20px;
+    overflow-y: scroll;
+    max-height: 600px;
+}
+
+.reserveForm.show {
+    display: block;
+}
+
+/* 借用請求 -> 共用屬性-------------------------------------------------------------------- */
+
+.content {
+    border: solid;
+    border-radius: 20px;
+    margin-top: 5px;
+}
+
+.title {
+    display: flex;
+    font-size: 30px;
+}
+
+.title p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 30px;
+    width: 100%;
+    /* border: solid; */
+}
+
+.title img {
+    margin-top: 10px;
+    margin-left: auto;
+    transition: all 0.4s ease;
+
+    transform: rotate(0deg);
+
+}
+
+.title img:hover {
+    cursor: pointer;
+}
+
+.title img.show {
+    margin-top: 10px;
+    margin-left: auto;
+    transition: all 0.4s ease;
+    transform: rotate(180deg);
+}
+
+.text {
+    display: none;
+    /* border: solid; */
+}
+
+.text.show {
+
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+
+    font-size: 20px;
+}
+
+.accounting {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 99%;
+    border-top: solid;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+.accounting p {
+    width: 50%;
+    padding: 5px;
+    padding-bottom: 10px;
+    font-size: 20px;
+    /* border: solid; */
+}
+
+.accounting button {
+    width: 45%;
+    margin-right: 5%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+
+    font-size: 20px;
+    cursor: pointer;
+    border: solid;
+}
+
+.accounting button:hover {
+    background-color: rgb(247, 188, 11);
+}
+
+
+/* 鑰匙借用紀錄-------------------------------------------- */
+.board-content {
+    position: fixed;
+    margin-left: 10px;
+    width: calc(100% - 250px);
+    height: 90%;
+    top: 10%;
+    left: 240px;
+    padding: 10px 200px;
+    background-color: rgb(255, 255, 255);
+    transition: all 0.5s ease;
+    z-index: 10;
+
+    /* border: solid; */
+
+}
+.keyRecord {
+    display: none;
+    height: 70%;
+}
+
+.keyRecord.show {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 10%;
+    left: 100px;
+    width: calc(100% - 250px);
+    z-index: 9999;
+}
+
+.keyRecordTitle {
+    display: flex;
+    border-bottom: 1px solid;
+    padding-bottom: 10px;
+}
+.keyRecordTitle span{
+    text-align: center;
+    font-size: 25px;
+    /* border: solid; */
+}
+.keyRecordBody {
+    overflow-y: scroll;
+}
+.keyRecordContent {
+    display: flex;
+    margin-top: 20px;
+}
+.keyRecordContent span{
+    text-align: center;
+    overflow-x: auto;
+    font-size: 20px;
+    /* border: solid; */
+
+}
+.keyRecordContent:hover {
+    /* background-color: red; */
+}
+
+
+/* 雙重按鈕確認歸還 */
+.keyRecordContent .returnButton {
+    width: 5%;
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 3px;
+    padding: 12px 24px;
+    border: 0;
+    color: #fff;
+    background: #ff5000;
+    line-height: 1.1;
+    font-size: 16px;
+    margin-left: 10px;
+}
+.keyRecordContent .returnButton:disabled {
+    background-color: #888;
+    transition: none;
+    box-shadow: none;
+    cursor: default;
+}
+
+.keyRecordContent button:hover {
+    transition: all .1s ease;
+    box-shadow: 0 0 0 0 #fff, 0 0 0 3px #e91d1d;
+}
+
+.keyRecordContent p {
+    margin-bottom: 10px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    text-align: center;
+    width: 300px;
+}
+.modal-content button {
+    width: auto;
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 3px;
+    padding: 12px 24px;
+    border: 0;
+    color: #fff;
+    background: #ff5000;
+    line-height: 1.1;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 課表排程-------------------------------------------- */
+
+
+.classSchedule {
+    display: none;
+}
+
+.classSchedule.show {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.fastAddForm {
+    display: none;
+    /* margin-top: 20px; */
+}
+
+.fastAddForm.show {
+    display: block;
+}
+
+.classAddForm {
+    display: none;
+    /* margin-top: 20px; */
+}
+
+.classAddForm.show {
+    display: block;
+}
+
+.classScheduleConditions {
+    display: flex;
+    width: 100%;
+    /* border: solid; */
+}
+
+.classScheduleConditions button {
+    font-size: 25px;
+    font-weight: 500;
+    padding: 10px 0;
+}
+
+.fastAdd {
+    width: 50% !important;
+    border-right: 2px solid !important;
+    outline: 0;
+    cursor: pointer;
+    background-color: #fff;
+    color: rgb(0, 0, 0);
+    font-weight: 400;
+    font-size: 16px;
+    border: none;
+    transition: 0.8s;
+}
+
+.fastAdd.show {
+    background-color: #9b9c9d;
+}
+
+.fastAdd:hover {
+    width: 99% !important;
+}
+
+.classAdd {
+    width: 50% !important;
+    outline: 0;
+    cursor: pointer;
+    background-color: #fff;
+    color: rgb(0, 0, 0);
+    font-weight: 400;
+    font-size: 16px;
+    border: none;
+    transition: 0.8s;
+}
+
+.classAdd.show {
+    background-color: #9b9c9d;
+}
+
+.classAdd:hover {
+    /* box-shadow: 0 6px 20px rgb(0 118 255 / 23%); */
+    width: 99% !important;
+}
+
+/*快速新增*/
+/* Add some basic styling to the form container */
+.fastAddForm {
+    width: 100%;
+    /* height: 60vh; */
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.classScheduleContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    font-size: 30px;
+}
+
+/* Style the form title */
+.fastAddForm h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Style the form inputs and labels */
+.fastAddForm div {
+    margin-bottom: 15px;
+}
+
+.fastAddForm input[type="text"],
+.fastAddForm input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    margin-right: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.fastSelectRoom::after,
+.fastSelectLesson::after {
+    background-image: url("../../image/dropdownIcon48.png");
+    background-size: 25px 25px;
+    width: 25px;
+    height: 25px;
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+    transition: transform 0.3s;
+}
+
+.fastSelectRoom.checked::after,
+.fastSelectLesson.checked::after {
+    transform: rotate(180deg) translateY(50%);
+}
+
+.fastAddForm .fastSelectRoom,
+.fastAddForm .fastSelectLesson {
+    position: relative;
+}
+
+.fastAddForm .fastDropdownBox:hover {
+    cursor: pointer;
+}
+
+.fastAddForm .fastDropdownBox:focus {
+    outline: none;
+}
+
+.fastAddForm .fastDropdown {
+    border: 2px solid lightgray;
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    height: 200px;
+    display: none;
+    overflow-y: scroll;
+    background-color: white;
+}
+
+.fastAddForm .fastDropdown.show {
+    display: block
+}
+
+.fastAddForm .fastDropdown ul {
+    list-style: none;
+}
+
+.fastAddForm .fastDropdown li {
+    text-align: center;
+    background-color: white;
+    padding-block: 5px;
+    border-bottom: 2px solid lightgray;
+}
+
+.fastAddForm .fastDropdown li:hover {
+    cursor: pointer;
+    background-color: rgb(90, 163, 223);
+}
+
+/* Style the submit button */
+.fastAddForm #fastSubmit {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 60px;
+    margin-left: auto;
+    margin-right: 8px;
+}
+
+.fastAddForm #fastSubmit:hover {
+    background-color: #45a049;
+}
+
+/* Optional: Style the datePicker input */
+.fastAddForm #datePicker {
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    height: 46px;
+}
+
+/*課表新增*/
+/* Add some basic styling to the form container */
+.classAddForm {
+    width: 100%;
+    /* height: 60vh; */
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    font-size: 20px;
+}
+
+.classAddForm .classScheduleContainer,
+.classAddForm .classSchedulePage {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+}
+
+.classScheduleBody {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+/* Style the form title */
+.classAddForm h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Style the form inputs and labels */
+.classAddForm p {
+    margin-top: 15px;
+}
+
+.classAddForm input[type="text"],
+.classAddForm input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    margin-right: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.classSelectRoom::after,
+.classSelectLesson::after,
+.classSelectWeek::after {
+    background-image: url("../../image/dropdownIcon48.png");
+    background-size: 25px 25px;
+    width: 25px;
+    height: 25px;
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+    transition: transform 0.3s;
+}
+
+.classSelectRoom.checked::after,
+.classSelectLesson.checked::after,
+.classSelectWeek.checked::after {
+    transform: rotate(180deg) translateY(50%);
+}
+
+.classAddForm .classSelectRoom,
+.classAddForm .classSelectLesson,
+.classAddForm .classSelectWeek {
+    position: relative;
+}
+
+.classAddForm .classDropdownBox:hover {
+    cursor: pointer;
+}
+
+.classAddForm .classDropdownBox:focus {
+    outline: none;
+}
+
+.classAddForm .classDropdown {
+    border: 2px solid lightgray;
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    height: 200px;
+    display: none;
+    overflow-y: scroll;
+    background-color: white;
+}
+
+.classAddForm .classDropdown.show {
+    display: block
+}
+
+.classAddForm .classDropdown ul {
+    list-style: none;
+}
+
+.classAddForm .classDropdown li {
+    text-align: center;
+    background-color: white;
+    padding-block: 5px;
+    border-bottom: 2px solid lightgray;
+}
+
+.classAddForm .classDropdown li:hover {
+    cursor: pointer;
+    background-color: rgb(90, 163, 223);
+}
+
+/* Style the submit button */
+.classAddForm #classSubmit {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 60px;
+    margin-left: auto;
+    margin-right: 8px;
+}
+
+.classAddForm #classSubmit:hover {
+    background-color: #45a049;
+}
+
+.classAddForm #semesterSelectStart,
+.classAddForm #semesterSelectEnd {
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    height: 46px;
+}
+
+.classAddForm #semesterSelectEnd {
+    margin-bottom: 0px;
+}
+
+.classScheduleContainer h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.classSchedule .addBlock {
+    display: flex;
+    flex-direction: column;
+    font-size: 10px;
+}
+
+.classSchedule span {
+    margin-right: auto;
+
+}
+
+.classSchedule button {
+    width: 40px;
+    /* margin-top: 20px; */
+    /* margin-bottom: 20px; */
+}
+
+/* 教室搜尋-------------------------------------------- */
+.classroomInquiry {
+    display: none;
+}
+
+.classroomInquiry.show {
+    display: flex;
+    flex-direction: column;
+}
+
+.classroomInquiryTitle h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.classroomInquiryContent {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    font-size: 25px !important;
+}
+
+.inquirySelectRoom::after {
+    background-image: url("../../image/dropdownIcon48.png");
+    background-size: 25px 25px;
+    width: 25px;
+    height: 25px;
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+    transition: transform 0.3s;
+}
+
+.inquirySelectRoom.checked::after {
+    transform: rotate(180deg) translateY(50%);
+}
+
+.inquirySelectRoom {
+    position: relative;
+}
+
+.inquirySelectRoom .inquiryDropdown {
+    border: 2px solid lightgray;
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    height: 200px;
+    display: none;
+    overflow-y: scroll;
+    background-color: white;
+}
+
+.inquirySelectRoom .inquiryDropdownBox:hover {
+    cursor: pointer;
+}
+
+.inquirySelectRoom .inquiryDropdownBox:focus {
+    outline: none;
+}
+
+.inquirySelectRoom .inquiryDropdown {
+    border: 2px solid lightgray;
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    height: 200px;
+    display: none;
+    overflow-y: scroll;
+    background-color: white;
+}
+
+.inquirySelectRoom .inquiryDropdown.show {
+    display: block;
+}
+
+.inquirySelectRoom .inquiryDropdown ul {
+    list-style: none;
+}
+
+.inquirySelectRoom .inquiryDropdown li {
+    text-align: center;
+    background-color: white;
+    padding-block: 5px;
+    border-bottom: 2px solid lightgray;
+}
+
+.inquirySelectRoom .inquiryDropdown li:hover {
+    cursor: pointer;
+    background-color: rgb(90, 163, 223);
+}
+
+.inquirySelectRoom input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-right: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.classroomInquiryResult {
+    overflow-y: scroll;
+    max-height: 500px;
+}
+
+.handleCancelButton {
+    margin-left: auto;
+}

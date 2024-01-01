@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application form</title>
+    <link rel="stylesheet" href="../Assets/CSS/Application form.css">
+    <script src="../Assets/JS/Application_form.js"></script>
+</head>
+
+<body>
+
+    <!-- 按鈕選擇----------------------------------------------  -->
+
+    <div class="conditions">
+        <button class="immediately" id="immediately">立即借用</button>
+        <button class="reserve" id="reserve">預約借用</button>
+    </div>
+
+    <!--  表單----------------------------------------------  -->
+    <div class="form-container">
+        <div class="content">
+
+            <h5 id="form-title"></h5>
+
+            <div class="line_block">
+                <hr>
+                <span class="quention_text">借用目的 :</span>
+                <textarea placeholder="小於100字" id="form_content"></textarea>
+                <hr>
+                <div class="YesOrNo">
+                    <button id="sendOut">送出</button>
+                    <button id="cancel">取消</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
