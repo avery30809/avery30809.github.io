@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const allClassroomName = [];
     getClassroomName();
     function getClassroomName() {
-        fetch("http://ntoucsroomlease.infinityfreeapp.com/Controller/Api/ClassroomController.php?action=getAllClassroomName")
+        fetch("https://1sth4tj0k3.000webhostapp.com//Controller/Api/ClassroomController.php?action=getAllClassroomName")
         .then(response => response.json())
         .then(datas => {
             datas.forEach((data) => {
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     document.getElementById("logoutBtn").addEventListener("click", ()=>{
-        fetch("http://ntoucsroomlease.infinityfreeapp.com/Controller/Api/UserController.php?action=logout");
+        fetch("https://1sth4tj0k3.000webhostapp.com//Controller/Api/UserController.php?action=logout");
         window.localStorage.removeItem("ID");
         window.location.href = "../../Pages/Home.html";
     }, false);
@@ -131,12 +131,12 @@ document.addEventListener("DOMContentLoaded", () => {
         myForm.append("action", "fastInsert");
         myForm.set("start", StartTime.indexOf(myForm.get("start")));
         myForm.set("end", EndTime.indexOf(myForm.get("end")));
-        fetch(`http://ntoucsroomlease.infinityfreeapp.com/Controller/Api/UserController.php?account=${myForm.get("userAccount")}&action=getID`)
+        fetch(`https://1sth4tj0k3.000webhostapp.com//Controller/Api/UserController.php?account=${myForm.get("userAccount")}&action=getID`)
         .then(response => response.text())
         .then(data => {
             if(data !== "未找到使用者") {
                 myForm.append("userID", data);
-                fetch("http://ntoucsroomlease.infinityfreeapp.com/Controller/Api/ClassroomController.php", {
+                fetch("https://1sth4tj0k3.000webhostapp.com//Controller/Api/ClassroomController.php", {
                     method: 'POST',
                     body: myForm
                 })
@@ -144,7 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 .then(res => {
                     window.alert(res.replace(" ", "\n"));
                     if(res=="新增成功！") {
-                        fetch("http://ntoucsroomlease.infinityfreeapp.com/Controller/Api/HistoryController.php", {
+                        fetch("https://1sth4tj0k3.000webhostapp.com//Controller/Api/HistoryController.php", {
                             method: 'POST',
                             body: myForm
                         })
@@ -255,19 +255,19 @@ document.addEventListener("DOMContentLoaded", () => {
         myForm.set("week", WeekTime.indexOf(myForm.get("week")));
         myForm.set("start", StartTime.indexOf(myForm.get("start")));
         myForm.set("end", EndTime.indexOf(myForm.get("end")));
-        fetch(`http://ntoucsroomlease.infinityfreeapp.com/Controller/Api/UserController.php?account=${myForm.get("userAccount")}&action=getID`)
+        fetch(`https://1sth4tj0k3.000webhostapp.com//Controller/Api/UserController.php?account=${myForm.get("userAccount")}&action=getID`)
         .then(response => response.text())
         .then(data => {
             if(data !== "未找到使用者"){
                 myForm.append("userID", data);
-                fetch("http://ntoucsroomlease.infinityfreeapp.com/Controller/Api/ClassroomController.php", {
+                fetch("https://1sth4tj0k3.000webhostapp.com//Controller/Api/ClassroomController.php", {
                     method: 'POST',
                     body: myForm
                 })
                 .then(response => response.text())
                 .then(res => {
                     window.alert(res.replace(" ", "\n"));
-                    fetch("http://ntoucsroomlease.infinityfreeapp.com/Controller/Api/HistoryController.php", {
+                    fetch("https://1sth4tj0k3.000webhostapp.com//Controller/Api/HistoryController.php", {
                         method: 'POST',
                         body: myForm
                     })
@@ -465,7 +465,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 testForm.append("date", arg[2]);
                 testForm.append("startTime", arg[3]);
                 testForm.append("action", "setBorrowed");
-                fetch("http://ntoucsroomlease.infinityfreeapp.com/Controller/Api/HistoryController.php", {
+                fetch("https://1sth4tj0k3.000webhostapp.com//Controller/Api/HistoryController.php", {
                     method: 'POST',
                     body: testForm
                 })
@@ -484,7 +484,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 testForm.append("date", arg[2]);
                 testForm.append("startTime", arg[3]);
                 testForm.append("action", "setKeyRecord");
-                fetch("http://ntoucsroomlease.infinityfreeapp.com/Controller/Api/HistoryController.php", {
+                fetch("https://1sth4tj0k3.000webhostapp.com//Controller/Api/HistoryController.php", {
                     method: 'POST',
                     body: testForm
                 })
@@ -510,7 +510,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     }
     function getHistoryForm() {
-        fetch("http://ntoucsroomlease.infinityfreeapp.com/Controller/Api/HistoryController.php?action=getHistoryForm")
+        fetch("https://1sth4tj0k3.000webhostapp.com//Controller/Api/HistoryController.php?action=getHistoryForm")
         .then(response => response.json())
         .then(datas => {
             //console.log(datas);
@@ -582,7 +582,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     testForm.append("allow", parseInt(arg[4]));
                     testForm.append("action", "examineForm");
                     
-                    fetch("http://ntoucsroomlease.infinityfreeapp.com/Controller/Api/HistoryController.php", {
+                    fetch("https://1sth4tj0k3.000webhostapp.com//Controller/Api/HistoryController.php", {
                         method: "POST",
                         body: testForm
                     })
@@ -593,7 +593,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         testForm.set("action", "applicationApprove");
                         testForm.append("times", arg[5]-arg[3]+1);
                         testForm.append("activity", arg[6]);
-                        fetch("http://ntoucsroomlease.infinityfreeapp.com/Controller/Api/ClassroomController.php", {
+                        fetch("https://1sth4tj0k3.000webhostapp.com//Controller/Api/ClassroomController.php", {
                             method: "POST",
                             body: testForm
                         })
@@ -632,7 +632,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <span style='width:20%;'>實際歸還</span>
                         <span style='width:5%'>借用狀態</span>
                     </div>`;
-        fetch("http://ntoucsroomlease.infinityfreeapp.com/Controller/Api/HistoryController.php?action=getKeyRecord")
+        fetch("https://1sth4tj0k3.000webhostapp.com//Controller/Api/HistoryController.php?action=getKeyRecord")
         .then(response=>response.json())
         .then(datas=>{
             if(datas.error === undefined) {
@@ -690,7 +690,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function getAllowedHistory() {
         let content = "";
-        fetch("http://ntoucsroomlease.infinityfreeapp.com/Controller/Api/HistoryController.php?action=getAllowedHistory")
+        fetch("https://1sth4tj0k3.000webhostapp.com//Controller/Api/HistoryController.php?action=getAllowedHistory")
         .then(response=>response.json())
         .then(datas=>{
             if (datas.error !== undefined) {
@@ -743,7 +743,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     testForm.append("startTime", parseInt(arg[3]));
                     testForm.append("action", "cancelHistory");
                     
-                    fetch("http://ntoucsroomlease.infinityfreeapp.com/Controller/Api/HistoryController.php", {
+                    fetch("https://1sth4tj0k3.000webhostapp.com//Controller/Api/HistoryController.php", {
                         method: "POST",
                         body: testForm
                     })
@@ -752,7 +752,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         getAllowedHistory();
                         testForm.set("action", "applicationCancel");
                         testForm.append("times", arg[4]-arg[3]+1);
-                        fetch("http://ntoucsroomlease.infinityfreeapp.com/Controller/Api/ClassroomController.php", {
+                        fetch("https://1sth4tj0k3.000webhostapp.com//Controller/Api/ClassroomController.php", {
                             method: "POST",
                             body: testForm
                         })

@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     getUserProfile();
     function getUserProfile() {
         //獲取使用者身分
-        fetch(`http://ntoucsroomlease.infinityfreeapp.com/Controller/Api/UserController.php?action=getUserProfile&ID=${window.localStorage.getItem("ID")}`)
+        fetch(`https://1sth4tj0k3.000webhostapp.com//Controller/Api/UserController.php?action=getUserProfile&ID=${window.localStorage.getItem("ID")}`)
         .then(response => response.json())
         .then(data => {
             if (data.error === undefined && window.localStorage.getItem("ID")!="1") {
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     function getApplyRequest() {
         let content = "";
         applyRequest.innerHTML = "";
-        fetch(`http://ntoucsroomlease.infinityfreeapp.com/Controller/Api/HistoryController.php?action=getApplyRequest&ID=${window.localStorage.getItem("ID")}`)
+        fetch(`https://1sth4tj0k3.000webhostapp.com//Controller/Api/HistoryController.php?action=getApplyRequest&ID=${window.localStorage.getItem("ID")}`)
         .then(response => response.json())
         .then(datas => {
             if (datas.error !== undefined) {
@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         let testForm = new FormData(e.target);
         testForm.append("account", user.useraccount);
         testForm.append("action", "updateProfile");
-        fetch("http://ntoucsroomlease.infinityfreeapp.com/Controller/Api/UserController.php", {
+        fetch("https://1sth4tj0k3.000webhostapp.com//Controller/Api/UserController.php", {
             method: "POST",
             body: testForm
         })
@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         applyRequest.classList.add("show");
     }
     logoutButton.addEventListener("click", () => {
-        fetch("http://ntoucsroomlease.infinityfreeapp.com/Controller/Api/UserController.php?action=logout");
+        fetch("https://1sth4tj0k3.000webhostapp.com//Controller/Api/UserController.php?action=logout");
         window.location.href = "../../Pages/Home.html";
         window.localStorage.removeItem("ID");
     }, false);
@@ -157,7 +157,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
             testForm.append("date", arg[2]);
             testForm.append("startTime", arg[3]);
             testForm.append("action", "cancelHistory");
-            fetch("http://ntoucsroomlease.infinityfreeapp.com/Controller/Api/HistoryController.php", {
+            fetch("https://1sth4tj0k3.000webhostapp.com//Controller/Api/HistoryController.php", {
                 method: 'POST',
                 body: testForm
             })
@@ -167,7 +167,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
                 if(arg[5] == 1) {
                     testForm.set("action", "applicationCancel");
                     testForm.append("times", arg[4]-arg[3]+1);
-                    fetch("http://ntoucsroomlease.infinityfreeapp.com/Controller/Api/ClassroomController.php", {
+                    fetch("https://1sth4tj0k3.000webhostapp.com//Controller/Api/ClassroomController.php", {
                         method: "POST",
                         body: testForm
                     })
