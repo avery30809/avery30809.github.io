@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     getUserProfile();
     function getUserProfile() {
         //獲取使用者身分
-        fetch(`https://1sth4tj0k3.000webhostapp.com//Controller/Api/UserController.php?action=getUserProfile&ID=${window.localStorage.getItem("ID")}`)
+        fetch(`https://1sth4tj0k3.000webhostapp.com/Controller/Api/UserController.php?action=getUserProfile&ID=${window.localStorage.getItem("ID")}`)
         .then(response => response.json())
         .then(data => {
             if(data.error === undefined) {
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         // 獲取查詢的日期值
         let testForm = new FormData();
         testForm.append("action", "searchDate");
-        fetch("https://1sth4tj0k3.000webhostapp.com//Controller/Api/UserController.php", {
+        fetch("https://1sth4tj0k3.000webhostapp.com/Controller/Api/UserController.php", {
             method: 'POST',
             body: testForm
         })
@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
     getAllClassroomName();
     function getAllClassroomName() {
-        fetch("https://1sth4tj0k3.000webhostapp.com//Controller/Api/ClassroomController.php?action=getAllClassroomName")
+        fetch("https://1sth4tj0k3.000webhostapp.com/Controller/Api/ClassroomController.php?action=getAllClassroomName")
         .then(response => response.json())
         .then(datas => {
             datas.forEach((data) => {
@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         });
     }
     function getDateClassCondition() {
-        fetch("https://1sth4tj0k3.000webhostapp.com//Controller/Api/ClassroomController.php?action=getCondition")
+        fetch("https://1sth4tj0k3.000webhostapp.com/Controller/Api/ClassroomController.php?action=getCondition")
         .then(response => response.json())
         .then(datas => {
             allClassroomName.forEach((room) => {
@@ -328,7 +328,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
             }
             myForm.append("roomName", roomName);
             myForm.append("action", "createApplicationForm");
-            fetch("https://1sth4tj0k3.000webhostapp.com//Controller/Api/ClassroomController.php", {
+            fetch("https://1sth4tj0k3.000webhostapp.com/Controller/Api/ClassroomController.php", {
                 method: 'POST',
                 body: myForm
             })
@@ -379,7 +379,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         popup.style.width = "900px";
         let roomName = event.target.innerHTML;
         document.getElementById("popupName").innerHTML = roomName + "課表";
-        fetch(`https://1sth4tj0k3.000webhostapp.com//Controller/Api/ClassroomController.php?roomName=${roomName}&action=getWeeklySchedule`)
+        fetch(`https://1sth4tj0k3.000webhostapp.com/Controller/Api/ClassroomController.php?roomName=${roomName}&action=getWeeklySchedule`)
         .then(response=>response.json())
         .then(data => {
             let schedule =  [

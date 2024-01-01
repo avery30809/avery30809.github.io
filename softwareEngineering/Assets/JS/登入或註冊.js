@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         formData.append("password", password);
         formData.append("operation", op);
         formData.append("action", "login");
-        fetch("https://1sth4tj0k3.000webhostapp.com//Controller/Api/UserController.php", {
+        fetch("https://1sth4tj0k3.000webhostapp.com/Controller/Api/UserController.php", {
             method: "POST",
             body: formData
         })
@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         formData.append("pwd",pwd);
         formData.append("confirm_pwd",confirm_pwd);
         formData.append("action", "register");
-        fetch('https://1sth4tj0k3.000webhostapp.com//Controller/Api/UserController.php', {
+        fetch('https://1sth4tj0k3.000webhostapp.com/Controller/Api/UserController.php', {
             method: 'POST',
             body: formData
         })
@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
             formData.append("email", email);
             formData.append("action", "verification");
 
-            fetch('https://1sth4tj0k3.000webhostapp.com//Controller/Api/VerificationController.php', {
+            fetch('https://1sth4tj0k3.000webhostapp.com/Controller/Api/VerificationController.php', {
                 method: 'POST',
                 body: formData
             })
@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
             formData.append("email", email);
             formData.append("action", "verification");
 
-            fetch('https://1sth4tj0k3.000webhostapp.com//Controller/Api/VerificationController.php', {
+            fetch('https://1sth4tj0k3.000webhostapp.com/Controller/Api/VerificationController.php', {
                 method: 'POST',
                 body: formData
             })
@@ -149,7 +149,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         formData.append("account", account);
         formData.append("verification_code",code);
         formData.append("action", "forgetPWD");
-        fetch('https://1sth4tj0k3.000webhostapp.com//Controller/Api/UserController.php', {
+        fetch('https://1sth4tj0k3.000webhostapp.com/Controller/Api/UserController.php', {
             method: 'POST',
             body: formData
         })
