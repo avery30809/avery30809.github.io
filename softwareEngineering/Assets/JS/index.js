@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         usericon: new Image()
     }
     for(const [key, value] of Object.entries(image)) {
-        value.src = `../../image/${key}.png`;
+        value.src = `../../softwareEngineering/image/${key}.png`;
     }
     document.getElementById("homeIcon").src = image.home.src;
     document.getElementById("dropdownIcon").src = image.dropdownIcon.src;
@@ -37,13 +37,13 @@ document.addEventListener("DOMContentLoaded", ()=>{
                 document.getElementById("login-signup").innerHTML = "<img id='usericon'>" + user.username;
                 document.getElementById("usericon").src = image.usericon.src;
                 document.getElementById("login-signup").addEventListener("click", function (event) {
-                    window.location.href = "../../Pages/使用者介面.html";
+                    window.location.href = "../../softwareEngineering/Pages/使用者介面.html";
                 }, false);
             }
             else {
                 //沒有登入就回首頁
                 window.alert("請先登入！");
-                window.location.href = "../../Pages/Home.html";
+                window.location.href = "../../softwareEngineering/Pages/Home.html";
             }
         });
     }

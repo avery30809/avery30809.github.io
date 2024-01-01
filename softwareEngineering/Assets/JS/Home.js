@@ -48,16 +48,16 @@ document.addEventListener("DOMContentLoaded", ()=>{
         console.log(window.localStorage.getItem("ID"));
         if(data.error === undefined) {
             user = data;
-            document.getElementById("login-signup").innerHTML = "<img src='../../image/usericon.png' class='usericon'>" + user.username;
+            document.getElementById("login-signup").innerHTML = "<img src='../../softwareEngineering/image/usericon.png' class='usericon'>" + user.username;
             document.getElementById("login-signup").addEventListener("click", function (event) {
-                if(data.isAdmin) window.location.href = "../../Pages/Admin interface.html";
-                else window.location.href = "../../Pages/使用者介面.html";
+                if(data.isAdmin) window.location.href = "../../softwareEngineering/Pages/Admin interface.html";
+                else window.location.href = "../../softwareEngineering/Pages/使用者介面.html";
             }, false);
         }
         //未登入
         else {
             document.getElementById("login-signup").addEventListener("click", function (event) {
-                window.location.href = "../../Pages/選擇登入身分.html";
+                window.location.href = "../../softwareEngineering/Pages/選擇登入身分.html";
             }, false);
         }
     });
@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
             method: 'POST',
             body: formdata
         });
-        window.location.href = "../../Pages/index.html";
+        window.location.href = "../../softwareEngineering/Pages/index.html";
     }
 
     function showDateform() {

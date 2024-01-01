@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
                 if(user.phone !== null) document.getElementById("infoPhone").value = user.phone;
             }
             else if(window.localStorage.getItem("ID")=="1") {
-                window.location.href = "../../Pages/Admin interface.html";
+                window.location.href = "../../softwareEngineering/Pages/Admin interface.html";
             }
             else {
                 //沒有登入就回首頁
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
             datas.forEach((data, index) => {
                 content +=  `<div class="content">
                                 <div class="title">
-                                    <p>${data[0]} ${data[2]}<img src="../../image/dropdownIcon48.png" class="immediatelyFormImg" data-index="${index}"></p>
+                                    <p>${data[0]} ${data[2]}<img src="../../softwareEngineering/image/dropdownIcon48.png" class="immediatelyFormImg" data-index="${index}"></p>
                                 </div>
                                 <div class="text" data-index="${index}">
                                     <p>借用日期: ${data[8]}</p>
@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     }
     logoutButton.addEventListener("click", () => {
         fetch("https://1sth4tj0k3.000webhostapp.com/Controller/Api/UserController.php?action=logout");
-        window.location.href = "../../Pages/Home.html";
+        window.location.href = "../../softwareEngineering/Pages/Home.html";
         window.localStorage.removeItem("ID");
     }, false);
 

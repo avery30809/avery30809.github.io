@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
                 formTitle.innerHTML = `${roomName}<sub class="date" id="selectedDatePlaceholder"></sub>`;
                 let newContent = '';
                 newContent += `<span>第${startTime}節</span>
-                                <img src="../../image/right.png">
+                                <img src="../../softwareEngineering/image/right.png">
                                 <span>${endTime === 9 ? "第9節後" : `第${endTime}節`}</span>`;
                 lineBlockDiv.insertAdjacentHTML('afterbegin', newContent);
             }

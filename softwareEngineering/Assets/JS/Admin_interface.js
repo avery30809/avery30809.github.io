@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("logoutBtn").addEventListener("click", ()=>{
         fetch("https://1sth4tj0k3.000webhostapp.com/Controller/Api/UserController.php?action=logout");
         window.localStorage.removeItem("ID");
-        window.location.href = "../../Pages/Home.html";
+        window.location.href = "../../softwareEngineering/Pages/Home.html";
     }, false);
 
     // 快速新增的下拉式選單
@@ -526,7 +526,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (data[6] === 1) {
                     imContent += `<div class="content">
                                         <div class="title">
-                                            <p>${data[1]} ${data[2]}<img src="../../image/dropdownIcon48.png" class="immediatelyFormImg" data-index="${index}" alt="immediatelyFormImg2"></p>
+                                            <p>${data[1]} ${data[2]}<img src="../../softwareEngineering/image/dropdownIcon48.png" class="immediatelyFormImg" data-index="${index}" alt="immediatelyFormImg2"></p>
                                         </div>
                                         <div class="text" data-index="${index}">
                                             <p>${data[11]}</p>
@@ -548,7 +548,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 } else {                      
                     rvContent += `<div class="content">
                                         <div class="title">
-                                            <p>${data[1]} ${data[2]}<img src="../../image/dropdownIcon48.png" class="reserveFormImg" data-index="${index}" alt="reserveFormImg2"></p>
+                                            <p>${data[1]} ${data[2]}<img src="../../softwareEngineering/image/dropdownIcon48.png" class="reserveFormImg" data-index="${index}" alt="reserveFormImg2"></p>
                                         </div>
                                         <div class="text" data-index="${index}">
                                             <p>${data[11]}</p>
@@ -704,7 +704,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 else {
                     content += `<div class="content">
                                     <div class="title">
-                                        <p>${data[1]} ${data[2]}<img src="../../image/dropdownIcon48.png" class="inquiryImg" data-index="${index}" alt="immediatelyFormImg2"></p>
+                                        <p>${data[1]} ${data[2]}<img src="../../softwareEngineering/image/dropdownIcon48.png" class="inquiryImg" data-index="${index}" alt="immediatelyFormImg2"></p>
                                     </div>
                                     <div class="text" data-index="inquiry ${index}">
                                         <p>${data[11]}</p>

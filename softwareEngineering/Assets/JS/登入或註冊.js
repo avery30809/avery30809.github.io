@@ -36,8 +36,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
             let temp = data.split(' ');
             if (temp[0] === "登入成功！") {
                 window.localStorage.setItem("ID", temp[2]);
-                if(temp[1] == 0) window.location.href = "../../Pages/Home.html";
-                else if(temp[1] == 1) window.location.href = "../../Pages/Admin interface.html";
+                if(temp[1] == 0) window.location.href = "../../softwareEngineering/Pages/Home.html";
+                else if(temp[1] == 1) window.location.href = "../../softwareEngineering/Pages/Admin interface.html";
             } else {
                 const errorMessage = document.getElementById("error-message");
                 errorMessage.innerText = temp[0];
